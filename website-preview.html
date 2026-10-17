@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Rohde's Leather Shop — Website Preview — Rohde's Leather Shop — Serving Bridgeport Since 1979</title>
+<meta name="description" content="Rohde's Leather Shop, Bridgeport MI — shoe & boot repair, custom leather, belts, biker apparel, gold embossing, holsters & sheaths, horse tack. Serving the community since 1979. (989) 777-2340.">
+<style>
+  :root{
+    --ink:#3E2723; --leather:#5D4037; --mid:#6D4C41; --tan:#8D6E63;
+    --light:#D7CCC8; --cream:#F5EFE6; --cream2:#EFE6D8; --gold:#E6C087; --stitch:rgba(245,239,230,.5);
+    --dim:rgba(245,239,230,.66);
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:76px}
+  body{
+    background:
+      radial-gradient(1000px 650px at 85% -8%, rgba(230,192,135,.10), transparent 60%),
+      radial-gradient(800px 550px at -8% 40%, rgba(141,110,99,.16), transparent 55%),
+      var(--ink);
+    color:var(--cream); font-family:var(--sans); -webkit-font-smoothing:antialiased; line-height:1.55;
+    padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right);
+  }
+  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;
+    background-image:radial-gradient(circle at 1px 1px, var(--light) 1px, transparent 1.6px);background-size:14px 14px}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+  .serif{font-family:var(--serif)}
+  h1,h2,h3{font-family:var(--serif);line-height:1.2;color:var(--cream)}
+  h2{font-size:clamp(1.5rem,4vw,2.2rem)}
+  .center{text-align:center}
+  .kicker{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .sub{color:var(--dim);max-width:620px;margin:12px auto 0}
+  section{padding:64px 0}
+  /* nav */
+  header.site{position:fixed;top:0;width:100%;z-index:70;background:rgba(62,39,35,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(215,204,200,.18);padding-top:env(safe-area-inset-top)}
+  nav.bar{max-width:1020px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 20px}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--cream);text-decoration:none}
+  .brand .mark{width:34px;height:34px;border-radius:8px;border:2px dashed var(--stitch);display:flex;align-items:center;justify-content:center;font-size:17px;background:var(--leather)}
+  .brand b{font-family:var(--serif);font-size:.98rem;display:block;line-height:1.1}
+  .brand small{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+  .navlinks{display:flex;gap:4px;align-items:center}
+  .navlinks a{color:var(--dim);text-decoration:none;font-size:.86rem;padding:6px 9px;border-radius:8px}
+  .navlinks a:hover{color:var(--cream)}
+  .navlinks a.cta{border:1.5px solid var(--gold);color:var(--gold);margin-left:6px}
+  #menu-btn{display:none;background:none;border:1.5px solid var(--tan);color:var(--cream);font-size:1.25rem;line-height:1;border-radius:10px;padding:6px 12px;cursor:pointer}
+  #menu-panel{display:none;border-top:1px solid rgba(215,204,200,.15);background:rgba(62,39,35,.97)}
+  #menu-panel.open{display:block}
+  #menu-panel a{display:block;padding:12px 20px;color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(215,204,200,.08)}
+  /* shared */
+  .card{background:linear-gradient(160deg,rgba(215,204,200,.07),rgba(215,204,200,.02));border:1px solid rgba(215,204,200,.22);border-radius:16px;padding:22px;position:relative}
+  .stitch{outline:1.5px dashed var(--stitch);outline-offset:-7px;border-radius:11px;pointer-events:none}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 22px;border-radius:12px;font-weight:600;font-size:.95rem;text-decoration:none;cursor:pointer;border:none;font-family:var(--sans);transition:transform .18s ease,box-shadow .18s ease}
+  .btn-primary{background:var(--cream);color:var(--ink)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.35)}
+  .btn-ghost{border:1.5px solid var(--tan);color:var(--cream);background:transparent}
+  .btn-ghost:hover{background:rgba(141,110,99,.25)}
+  .reveal{opacity:1}
+  .js .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+  .js .reveal.on{opacity:1;transform:none}
+  /* hero */
+  #hero{padding:140px 0 70px;text-align:center}
+  .badge{display:inline-flex;gap:8px;align-items:center;border:1px dashed rgba(230,192,135,.5);border-radius:999px;padding:8px 16px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;background:rgba(93,64,55,.5)}
+  h1{font-size:clamp(2rem,5.4vw,3.2rem)}
+  .goldtxt{color:var(--gold)}
+  .stars{color:var(--gold);letter-spacing:2px}
+  .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+  /* services */
+  .svcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:32px}
+  .svc .ico{font-size:1.5rem;margin-bottom:8px;display:block}
+  .svc h3{font-size:1.02rem;margin-bottom:6px}
+  .svc p{font-size:.85rem;color:var(--dim)}
+  /* gallery */
+  .galgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:32px}
+  .frame{aspect-ratio:4/3;border:2px solid var(--tan);border-radius:12px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:repeating-linear-gradient(45deg,rgba(141,110,99,.18) 0 12px,rgba(93,64,55,.28) 12px 24px);box-shadow:inset 0 0 0 6px var(--ink), inset 0 0 0 8px rgba(215,204,200,.35)}
+  .frame span{font-size:1.4rem}
+  .frame p{font-size:.78rem;color:var(--dim);text-align:center;padding:0 12px}
+  /* reviews */
+  .revgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:32px}
+  .rev blockquote{font-family:var(--serif);font-style:italic;color:var(--cream2);font-size:.95rem}
+  .rev .meta{margin-top:12px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+  .rev .meta b{color:var(--gold)}
+  .revnote{font-size:.72rem;color:rgba(215,204,200,.45);margin-top:18px;text-align:center}
+  /* visit */
+  .visitgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:32px;text-align:left}
+  .visitgrid h3{margin-bottom:8px}
+  .visitgrid p,.visitgrid li{font-size:.9rem;color:var(--dim)}
+  .visitgrid ul{list-style:none}
+  .visitgrid li{padding:5px 0;border-bottom:1px dashed rgba(215,204,200,.16);display:flex;justify-content:space-between;gap:12px}
+  .visitgrid li span:last-child{color:var(--cream)}
+  .visitgrid li.closed span:last-child{color:var(--tan)}
+  .a{color:var(--gold);text-decoration:none}
+  .a:hover{text-decoration:underline}
+  /* form */
+  .formwrap{max-width:640px;margin:32px auto 0;text-align:left}
+  .frow{margin-bottom:16px}
+  label{display:block;font-size:.82rem;letter-spacing:.04em;margin-bottom:6px;color:var(--cream)}
+  label .req{color:var(--gold)}
+  input,select,textarea{width:100%;background:rgba(62,39,35,.65);border:1px solid rgba(215,204,200,.35);border-radius:10px;color:var(--cream);padding:11px 13px;font-size:.95rem;font-family:var(--sans);min-height:44px}
+  textarea{min-height:110px;resize:vertical}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+  .err{color:#FFB74D;font-size:.78rem;margin-top:5px;display:none}
+  .frow.invalid .err{display:block}
+  .frow.invalid input,.frow.invalid select,.frow.invalid textarea{border-color:#FFB74D}
+  .formnote{font-size:.78rem;color:var(--dim);margin-top:14px;text-align:center}
+  .formok{display:none;margin-top:16px;border:1px dashed rgba(156,204,101,.5);background:rgba(156,204,101,.08);color:var(--cream);border-radius:12px;padding:14px 16px;font-size:.88rem;text-align:center}
+  .formwrap.sent .formok{display:block}
+  .formwrap.sent #form-fields{display:none}
+  /* footer */
+  footer.site{border-top:1px solid rgba(215,204,200,.15);padding:28px 0 40px;text-align:center}
+  .fine{font-size:.72rem;color:rgba(215,204,200,.45)}
+  .compliance{font-size:.66rem;letter-spacing:.05em;color:rgba(215,204,200,.55);text-transform:uppercase}
+  @media (max-width:860px){
+    .navlinks{display:none}
+    #menu-btn{display:block}
+    #hero{padding:120px 0 50px}
+    section{padding:52px 0}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none!important;animation:none!important}
+    .js .reveal{opacity:1;transform:none}
+    .btn:hover{transform:none}
+  }
+</style>
+</head>
+<body>
+<div style="position:sticky;top:0;z-index:999;background:rgba(30,20,14,.96);padding:10px 18px;display:flex;gap:18px;align-items:center;font-family:Georgia,serif;box-shadow:0 2px 8px rgba(0,0,0,.35)">
+<a href="index.html" style="color:#D7CCC8;text-decoration:none;font-size:14px;letter-spacing:.5px">◆ SOETECH × ROHDE'S</a>
+<span style="flex:1"></span>
+<a href="index.html" style="color:#D7CCC8;text-decoration:none;font-size:14px">Cover</a>
+<a href="proposal.html" style="color:#D7CCC8;text-decoration:none;font-size:14px">Proposal</a>
+<a href="website-preview.html" style="color:#D7CCC8;text-decoration:none;font-size:14px">Website Preview</a>
+</div>
+<header class="site">
+  <nav class="bar" aria-label="Primary">
+    <a class="brand" href="#hero">
+      <span class="mark" aria-hidden="true">🪡</span>
+      <span><b>Rohde's Leather Shop</b><small>Bridgeport, Michigan · Since 1979</small></span>
+    </a>
+    <div class="navlinks" id="desk-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Our Work</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+      <a href="#quote" class="cta">Get a Quote</a>
+    </div>
+    <button id="menu-btn" aria-expanded="false" aria-controls="menu-panel" aria-label="Toggle menu">☰</button>
+  </nav>
+  <div id="menu-panel">
+    <a href="#services">Services</a>
+    <a href="#gallery">Our Work</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#visit">Visit Us</a>
+    <a href="#quote">Get a Quote</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="wrap">
+      <p class="badge reveal">Family-owned · Bridgeport, MI</p>
+      <h1 class="reveal">Serving Bridgeport<br><span class="goldtxt">since 1979.</span></h1>
+      <p class="sub reveal" style="font-size:1.02rem">Shoe &amp; boot repair, custom leather work, belts, biker apparel, gold embossing, holsters &amp; sheaths, and horse tack — made and mended by hand, three generations deep.</p>
+      <p class="reveal stars" style="margin-top:14px" aria-label="Rated 5.0 out of 5 stars from 42 Google reviews">★★★★★ <strong style="font-family:var(--sans);font-size:.85rem;color:var(--cream)">5.0 · 42 Google reviews</strong></p>
+      <div class="hero-ctas reveal">
+        <a href="#quote" class="btn btn-primary">Request a Quote</a>
+        <a href="tel:+19897772340" class="btn btn-ghost">📞 Call (989) 777-2340</a>
+      </div>
+      <p class="reveal fine" style="margin-top:18px">Mon–Fri 10 AM – 5 PM · 6148 Dixie Hwy, Bridgeport, MI 48722</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="background:rgba(62,39,35,.45)">
+    <div class="wrap center">
+      <p class="kicker reveal">What we do</p>
+      <h2 class="reveal">Repair, restore, <span class="goldtxt">and build new</span></h2>
+      <p class="sub reveal">If it's leather, bring it in. If you can draw it up, we can probably make it.</p>
+      <div class="svcgrid">
+        <article class="card svc reveal"><span class="stitch" aria-hidden="true"></span><span class="ico" aria-hidden="true">👞</span><h3>Shoe &amp; Boot Repair</h3><p>Soles, heels, stitching, and stretching — walk-in friendly, done by hand.</p></article>
+        <article class="card svc reveal"><span class="stitch" aria-hidden="true"></span><span class="ico" aria-hidden="true">🧵</span><h3>Custom Belts</h3><p>Any size, any buckle. Cut, punched, and finished at the bench.</p></article>
+        <article class="card svc reveal"><span class="stitch" aria-hidden="true"></span><span class="ico" aria-hidden="true">🏍️</span><h3>Biker Apparel</h3><p>Jackets, vests, chaps &amp; gloves — repair, alteration, and sales.</p></article>
+        <article class="card svc reveal"><span class="stitch" aria-hidden="true"></span><span class="ico" aria-hidden="true">✒️</span><h3>Gold Embossing</h3><p>Personalize Bibles, belts, purses, wallets &amp; cases with gold-stamped names.</p></article>
+        <article class="card svc reveal"><span class="stitch" aria-hidden="true"></span><span class="ico" aria-hidden="true">🔒</span><h3>Holsters &amp; Sheaths</h3><p>Custom gun holsters, knife sheaths &amp; cases — built to fit your gear.</p></article>
+        <article class="card svc reveal"><span class="stitch" aria-hidden="true"></span><span class="ico" aria-hidden="true">🐎</span><h3>Horse Tack &amp; Harness</h3><p>Saddle repair, harnesses, tack equipment, and custom dog collars.</p></article>
+        <article class="card svc reveal"><span class="stitch" aria-hidden="true"></span><span class="ico" aria-hidden="true">🧥</span><h3>Leather Tailoring &amp; Zippers</h3><p>Jacket alterations, zipper replacement for clothing &amp; bags, coat repair.</p></article>
+        <article class="card svc reveal"><span class="stitch" aria-hidden="true"></span><span class="ico" aria-hidden="true">⚾</span><h3>Baseball-Glove Lacing</h3><p>Re-lacing with our own high-grade lacing — bring the glove back to life.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="wrap center">
+      <p class="kicker reveal">Our work</p>
+      <h2 class="reveal">Built at the <span class="goldtxt">bench</span></h2>
+      <p class="sub reveal">Photo slots ready — the shop's finished work goes here. (Shop owner: send us your work photos and these fill in with the real thing.)</p>
+      <div class="galgrid">
+        <div class="frame reveal"><span aria-hidden="true">📷</span><p>photo slot — send us your work photos<br><em>(boot &amp; shoe repair before/after)</em></p></div>
+        <div class="frame reveal"><span aria-hidden="true">📷</span><p>photo slot — send us your work photos<br><em>(custom belts &amp; embossing)</em></p></div>
+        <div class="frame reveal"><span aria-hidden="true">📷</span><p>photo slot — send us your work photos<br><em>(biker jacket restoration)</em></p></div>
+        <div class="frame reveal"><span aria-hidden="true">📷</span><p>photo slot — send us your work photos<br><em>(holster or knife sheath)</em></p></div>
+        <div class="frame reveal"><span aria-hidden="true">📷</span><p>photo slot — send us your work photos<br><em>(horse tack &amp; harness work)</em></p></div>
+        <div class="frame reveal"><span aria-hidden="true">📷</span><p>photo slot — send us your work photos<br><em>(glove re-lacing / misc. custom)</em></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" style="background:rgba(62,39,35,.45)">
+    <div class="wrap center">
+      <p class="kicker reveal">What customers say</p>
+      <h2 class="reveal"><span class="stars">★★★★★</span> <span class="goldtxt">5.0 — 42 reviews</span></h2>
+      <p class="sub reveal">Real words from real customers, quoted verbatim from public reviews.</p>
+      <div class="revgrid">
+        <article class="card rev reveal"><span class="stitch" aria-hidden="true"></span>
+          <p class="stars" aria-hidden="true">★★★★★</p>
+          <blockquote>"This is a wonderful place to get leather repaired… countless projects… repairing leather cuffs on a jacket to stitching purse straps back together to creating a pair of booties for my invalid father. It is a lovely family that owns and operates this business. They are fixtures in the Bridgeport community."</blockquote>
+          <p class="meta"><b>5★</b> · Google review · ~1 year ago</p>
+        </article>
+        <article class="card rev reveal"><span class="stitch" aria-hidden="true"></span>
+          <p class="stars" aria-hidden="true">★★★★★</p>
+          <blockquote>"Marcie has repaired a few leather items for me: boots, chaps, jacket and ottoman. she does amazing work!!"</blockquote>
+          <p class="meta"><b>5★</b> · Jodi C. · Yelp review</p>
+        </article>
+        <article class="card rev reveal"><span class="stitch" aria-hidden="true"></span>
+          <p class="stars" aria-hidden="true">★★★★★</p>
+          <blockquote>"Fantastic repair on my leather coat… I came from Lansing to have my coat repaired."</blockquote>
+          <p class="meta"><b>5★</b> · Google review · ~1 year ago</p>
+        </article>
+        <article class="card rev reveal"><span class="stitch" aria-hidden="true"></span>
+          <p class="stars" aria-hidden="true">★★★★★</p>
+          <blockquote>"Very kind and understanding people… amazing job… look as good as new."</blockquote>
+          <p class="meta"><b>5★</b> · Google review · fringe boots heel repair · ~1 year ago</p>
+        </article>
+      </div>
+      <p class="revnote reveal">Reviews quoted verbatim from public Google/Yelp listings, retrieved Oct 2026.</p>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker reveal">Visit us</p>
+        <h2 class="reveal">Just off I-75, west of the <span class="goldtxt">Bridgeport exit</span></h2>
+      </div>
+      <div class="visitgrid">
+        <div class="card reveal"><span class="stitch" aria-hidden="true"></span>
+          <h3>📍 Location</h3>
+          <p><a class="a" href="https://www.google.com/maps/search/?api=1&query=Rohde%27s+Leather+Shop+6148+Dixie+Hwy+Bridgeport+MI+48722" target="_blank" rel="noopener">6148 Dixie Hwy<br>Bridgeport, MI 48722</a></p>
+          <p style="margin-top:10px">Across from Rite Aid · plenty of parking right out front.</p>
+        </div>
+        <div class="card reveal"><span class="stitch" aria-hidden="true"></span>
+          <h3>🕐 Hours</h3>
+          <ul>
+            <li><span>Monday</span><span>10 AM – 5 PM</span></li>
+            <li><span>Tuesday</span><span>10 AM – 5 PM</span></li>
+            <li><span>Wednesday</span><span>10 AM – 5 PM</span></li>
+            <li><span>Thursday</span><span>10 AM – 5 PM</span></li>
+            <li><span>Friday</span><span>10 AM – 5 PM</span></li>
+            <li class="closed"><span>Saturday</span><span>Closed</span></li>
+            <li class="closed"><span>Sunday</span><span>Closed</span></li>
+          </ul>
+        </div>
+        <div class="card reveal"><span class="stitch" aria-hidden="true"></span>
+          <h3>📞 Contact</h3>
+          <p>Phone: <a class="a" href="tel:+19897772340">(989) 777-2340</a></p>
+          <p style="margin-top:8px">Prefer to write? Use the quote form below and it comes straight to the shop's email.</p>
+          <p style="margin-top:8px;font-family:var(--serif);font-style:italic;color:var(--dim)">"If you can draw it up, we can make it."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE FORM -->
+  <section id="quote" style="background:rgba(62,39,35,.45)">
+    <div class="wrap center">
+      <p class="kicker reveal">Request a quote</p>
+      <h2 class="reveal">Tell us about your <span class="goldtxt">project</span></h2>
+      <p class="sub reveal">Fill this out and it opens a pre-addressed email to the shop — hit send and it's in the owner's inbox. No accounts, no online storage.</p>
+
+      <div class="formwrap card reveal" id="formwrap"><span class="stitch" aria-hidden="true"></span>
+        <form id="quote-form" novalidate>
+          <div id="form-fields">
+            <div class="frow" data-field="name">
+              <label for="f-name">Your name <span class="req">*</span></label>
+              <input id="f-name" name="name" type="text" autocomplete="name" placeholder="e.g. Dana Smith">
+              <p class="err">Please tell us your name.</p>
+            </div>
+            <div class="frow" data-field="phone">
+              <label for="f-phone">Phone <span class="req">*</span></label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(989) 555-0123">
+              <p class="err">Please enter a phone number (at least 7 digits).</p>
+            </div>
+            <div class="frow" data-field="email">
+              <label for="f-email">Email <span class="req">*</span></label>
+              <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+              <p class="err">Please enter a valid email address.</p>
+            </div>
+            <div class="frow" data-field="service">
+              <label for="f-service">What do you need? <span class="req">*</span></label>
+              <select id="f-service" name="service">
+                <option value="">— Choose a service —</option>
+                <option>Shoe &amp; boot repair</option>
+                <option>Heel repair / replacement</option>
+                <option>Shoe stretching</option>
+                <option>Custom belt (any size)</option>
+                <option>Biker apparel (jackets, vests, chaps, gloves)</option>
+                <option>Leather tailoring / alterations</option>
+                <option>Zipper replacement (clothing / bags)</option>
+                <option>Baseball-glove re-lacing</option>
+                <option>Gold embossing &amp; personalization</option>
+                <option>Custom holsters &amp; gun cases</option>
+                <option>Knife sheaths &amp; cases</option>
+                <option>Horse tack / harnesses</option>
+                <option>Dog collars &amp; custom pieces</option>
+                <option>Leather, hides &amp; supplies purchase</option>
+                <option>Other / not sure yet</option>
+              </select>
+              <p class="err">Please choose a service.</p>
+            </div>
+            <div class="frow" data-field="message">
+              <label for="f-message">Tell us about the item <span class="req">*</span></label>
+              <textarea id="f-message" name="message" placeholder="What is it, what's wrong (or what should we make), and anything else we should know. A photo can come with you on your visit."></textarea>
+              <p class="err">Please describe the job (a sentence or two is plenty).</p>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%">Send My Quote Request</button>
+          </div>
+          <div class="formok" role="status">
+            <p><strong>Your email app should now be open</strong> with your request addressed to the shop — just hit send. If nothing opened, email us directly at <a class="a" href="mailto:fmr6465@yahoo.com">fmr6465@yahoo.com</a> or call <a class="a" href="tel:+19897772340">(989) 777-2340</a>.</p>
+            <button type="button" id="form-reset" class="btn btn-ghost" style="margin-top:12px">Write another request</button>
+          </div>
+        </form>
+        <p class="formnote">🔒 This message <strong>goes to the shop's email</strong> (fmr6465@yahoo.com) through your own email app. Nothing is stored on this website, and the shop never shares your details.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p class="serif" style="color:var(--dim)">Rohde's Leather Shop · 6148 Dixie Hwy, Bridgeport, MI 48722 · <a class="a" href="tel:+19897772340">(989) 777-2340</a></p>
+    <p style="margin-top:8px"><a class="a" href="https://www.facebook.com/RohdesLeather" target="_blank" rel="noopener">Follow us on Facebook</a></p>
+    <p class="compliance" style="margin-top:14px">Site starter demo by SOETech — quote form sends via your own email app — no data storage · owner review pending before any live launch.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Reveal on scroll */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('on'); });
+  }
+
+  /* Mobile menu */
+  var menuBtn = document.getElementById('menu-btn');
+  var menuPanel = document.getElementById('menu-panel');
+  if (menuBtn && menuPanel) {
+    menuBtn.addEventListener('click', function () {
+      var open = menuPanel.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    menuPanel.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        menuPanel.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* Quote form — client-side validation, mailto handoff, zero storage */
+  var SHOP_EMAIL = 'fmr6465@yahoo.com';
+  var form = document.getElementById('quote-form');
+  var wrap = document.getElementById('formwrap');
+
+  function mark(name, bad) {
+    var row = form.querySelector('.frow[data-field="' + name + '"]');
+    if (row) row.classList.toggle('invalid', !!bad);
+    return !bad;
+  }
+  function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+
+  if (form) {
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var name = document.getElementById('f-name').value.trim();
+      var phone = document.getElementById('f-phone').value.trim();
+      var email = document.getElementById('f-email').value.trim();
+      var service = document.getElementById('f-service').value;
+      var message = document.getElementById('f-message').value.trim();
+
+      var ok = true;
+      ok = mark('name', name.length < 2) && ok;
+      ok = mark('phone', phone.replace(/\D/g, '').length < 7 && !validEmail(email)) && ok;
+      ok = mark('email', !validEmail(email)) && ok;
+      ok = mark('service', !service) && ok;
+      ok = mark('message', message.length < 5) && ok;
+
+      if (!ok) {
+        var firstBad = form.querySelector('.frow.invalid');
+        if (firstBad) firstBad.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+        return;
+      }
+
+      var digits = phone.replace(/\D/g, '');
+      if (digits.length === 10) digits = digits.slice(0, 3) + '-' + digits.slice(3, 6) + '-' + digits.slice(6);
+      var subject = 'Quote request: ' + service + ' — ' + name;
+      var body =
+        'New quote request from the Rohde\u2019s Leather Shop website.\n\n' +
+        'Name: ' + name + '\n' +
+        'Phone: ' + (phone.replace(/\D/g, '').length >= 7 ? digits : '(not provided)') + '\n' +
+        'Email: ' + email + '\n' +
+        'Service: ' + service + '\n\n' +
+        'Message:\n' + message + '\n\n' +
+        '(Sent via the website quote form \u2014 reply to the customer\u2019s email or call them.)';
+
+      var href = 'mailto:' + SHOP_EMAIL +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+      window.location.href = href;
+      wrap.classList.add('sent');
+    });
+
+    /* live re-validation once a field was flagged */
+    ['f-name', 'f-phone', 'f-email', 'f-service', 'f-message'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('input', function () {
+        var row = el.closest('.frow');
+        if (row && row.classList.contains('invalid')) {
+          revalidateField(el.id);
+        }
+      });
+    });
+
+    function revalidateField(id) {
+      var v = document.getElementById(id).value.trim();
+      var bad = false;
+      if (id === 'f-name') bad = v.length < 2;
+      if (id === 'f-phone') bad = v.replace(/\D/g, '').length < 7 && !validEmail(document.getElementById('f-email').value.trim());
+      if (id === 'f-email') bad = !validEmail(v);
+      if (id === 'f-service') bad = !v;
+      if (id === 'f-message') bad = v.length < 5;
+      mark(id.replace('f-', ''), bad);
+    }
+
+    var resetBtn = document.getElementById('form-reset');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        form.reset();
+        form.querySelectorAll('.frow').forEach(function (r) { r.classList.remove('invalid'); });
+        wrap.classList.remove('sent');
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>
