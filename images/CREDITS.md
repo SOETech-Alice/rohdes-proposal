@@ -21,6 +21,12 @@ CC BY-SA images are attributed here as required by their license terms.
 - **License:** CC BY-SA 3.0
 - **Source:** https://commons.wikimedia.org/wiki/File:Black_Riding_Boots.jpg
 
+## images/custershop.jpg
+- **Title:** File:Custer Custom Leather Company.jpg
+- **Author:** Mens Leather Belt
+- **License:** CC BY-SA 4.0
+- **Source:** https://commons.wikimedia.org/wiki/File:Custer_Custom_Leather_Company.jpg
+
 ## Attribution note
 
 “Shoemaking Repair Shop in Washington D.C.” (CC BY-SA 4.0) and “Black Riding Boots” (CC BY-SA 3.0)
